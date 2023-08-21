@@ -87,7 +87,8 @@ class MBTilesSource:
 
 # account for some directory overhead
 # TODO: this should be dependant on the file size
-DELTA = 5 * 1024 * 1024
+# TODO: seeing an overhead of 1090 bytes per tile which seems very off.. needs to be investigated
+DELTA = 150 * 1024 * 1024
 # github release limit
 size_limit_bytes = (2 * 1024 * 1024 * 1024) - DELTA
 # github git file size limit
@@ -311,7 +312,7 @@ def create_pmtiles(partition_info, to_pmtiles_prefix, reader):
         tile_type = get_tile_type(metadata['format'])
         header = {
             "tile_type": tile_type,
-            "tile_compression": Compression.NONE,
+            "tile_compression": Compression.GZIP,
             "min_lon_e7": int(min_lons[suffix] * 10000000),
             "min_lat_e7": int(min_lats[suffix] * 10000000),
             "max_lon_e7": int(max_lons[suffix] * 10000000),
