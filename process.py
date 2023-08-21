@@ -49,7 +49,7 @@ def load_file(s2, india_shape):
                 line = json.dumps(feat) + '\n'
                 outf.write(line)
     Path(f'data/{s2}.csv').unlink()
-    run_external(f'tippecanoe -l google_buildings -P --drop-densest-as-needed -n "Google buildings" -o data/{s2}.mbtiles data/{s2}.geojsonl')
+    run_external(f'tippecanoe -l google_buildings -P --no-duplication --drop-densest-as-needed -n "Google buildings" -o data/{s2}.mbtiles data/{s2}.geojsonl')
     Path(f'data/{s2}.geojsonl').unlink()
 
 if __name__ == '__main__':
