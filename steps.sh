@@ -31,3 +31,6 @@ gh release create GOBI-latest -t "Google Open Buildings India"
 ls data/*.pmtiles data/mosaic.json | xargs gh release upload GOBI-latest
 
 # 7. start a fly server to expose the pmtiles files as a tileserver
+cd infra
+fly launch
+fly deploy
