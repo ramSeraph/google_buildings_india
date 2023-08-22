@@ -4,7 +4,7 @@ Data is available in [Releases](https://github.com/ramSeraph/google_buildings_in
 Can be downloaded to a local mbtiles file by running the following commands
 
 ```
-pip install pmtiles==3.2.0 mercantile==1.2.1
+pip install pmtiles==3.2.0 mercantile==1.2.1 requests==2.30.0
 python download_as_mbtiles.py
 ```
 Data is also available as mvt tiles at -
