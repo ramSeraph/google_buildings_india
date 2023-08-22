@@ -8,7 +8,7 @@ from pathlib import Path
 from pmtiles.reader import Reader, MmapSource, all_tiles
 from pmtiles.tile import TileType, Compression
 
-mosaic_url = 'https://github.com/ramSeraph/opendata/releases/download/soi-latest/mosaic.json'
+mosaic_url = 'https://github.com/ramSeraph/google_buildings_india/releases/download/GOBI-latest/mosaic.json'
 mosaic_file = 'mosaic.json'
 
 out_mbtiles_file = 'google-open-buildings-india.mbtiles'
