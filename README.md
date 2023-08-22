@@ -9,7 +9,7 @@ python download_as_mbtiles.py
 ```
 Data is also available as mvt tiles at -
 ```
-https://indianopenmaps.fly.dev/google-buildings/{z}/{y}/{x}.pbf
+https://indianopenmaps.fly.dev/google-buildings/{z}/{x}/{y}.pbf
 ```
 
 Steps to reproduce what was done to get data in the current format are documented in `steps.sh`
