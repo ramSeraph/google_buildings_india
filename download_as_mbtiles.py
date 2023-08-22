@@ -37,7 +37,7 @@ def get_metadata(mosaic_data):
     cm = {}
     for k, item in mosaic_data.items():
         h = item['header']
-        # TODO: not generic, max and min zoom can from metadata
+        # TODO: not generic, max and min zoom can be from metadata
         if 'max_zoom' not in ch or ch['max_zoom'] < h['max_zoom']:
             ch['max_zoom'] = h['max_zoom']
         if 'min_zoom' not in ch or ch['min_zoom'] > h['min_zoom']:
@@ -74,7 +74,7 @@ def get_metadata(mosaic_data):
     elif tile_type == TileType.AVIF.value:
         cm["format"] = "avif"
     cm["version"] = "2"
-    cm["type"] = "baselayer"
+    cm["type"] = "overlay"
     #TODO: to be more generic there are a few more fields to look at
     return cm
 
