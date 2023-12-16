@@ -14,6 +14,8 @@ https://indianopenmaps.fly.dev/google-buildings/{z}/{x}/{y}.pbf
 
 Steps to reproduce what was done to get data in the current format are documented in `steps.sh`
 
+Sample working deployment is in the `infra` folder. But the current deployment is at [indianopenmaps](https://github.com/ramSeraph/indianopenmaps)
+
 Source: https://sites.research.google/open-buildings/
 
 Changes Made: converted to pmtiles format, a tiny bit of data has been dropped( around 15% of 4 z14 tiles ) and some generalizations were applied at lower zoom levels.
