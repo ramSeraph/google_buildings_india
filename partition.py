@@ -79,7 +79,9 @@ class MBTilesSource:
             all_metadata[row[0]] = row[1]
 
         metadata = {}
-        for k in ['type', 'format']:
+        for k in ['type', 'format', 'attribution', 'description', 'name', 'version', 'vector_layers']:
+            if k not in metadata:
+                continue
             metadata[k] = all_metadata[k]
 
         return metadata
@@ -319,7 +321,7 @@ def create_pmtiles(partition_info, to_pmtiles_prefix, reader):
             "max_lat_e7": int(max_lats[suffix] * 10000000),
             "min_zoom": min_zooms[suffix],
             "max_zoom": max_zooms[suffix],
-            "center_zoom": 0,
+            "center_zoom": max_zooms[suffix],
             "center_lon_e7": int(10000000 * (min_lons[suffix] + max_lons[suffix])/2),
             "center_lat_e7": int(10000000 * (min_lats[suffix] + max_lats[suffix])/2),
         }
