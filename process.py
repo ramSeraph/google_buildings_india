@@ -49,8 +49,8 @@ def load_file(s2, india_shape):
                 line = json.dumps(feat) + '\n'
                 outf.write(line)
     Path(f'data/{s2}.csv').unlink()
-    # the tiles in the repo were generated with "--no-duplication" falg.. but that cause clipping at tile boundaries.. so dropping it 
-    run_external(f'tippecanoe -l google_buildings -P --drop-densest-as-needed -n "Google buildings" -o data/{s2}.mbtiles data/{s2}.geojsonl')
+    # the tiles in the repo were generated with "--no-duplication" flag.. but that caused clipping at tile boundaries.. so dropping it 
+    run_external(f'tippecanoe -l google_buildings -n "google_buildings" -N "Google Buildings India" -A \'<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC-BY 4.0</a>\' -P --drop-densest-as-needed -o data/{s2}.mbtiles data/{s2}.geojsonl')
     Path(f'data/{s2}.geojsonl').unlink()
 
 if __name__ == '__main__':
