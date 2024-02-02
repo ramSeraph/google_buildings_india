@@ -12,6 +12,8 @@ Data is also available as mvt tiles at -
 https://indianopenmaps.fly.dev/google-buildings/{z}/{x}/{y}.pbf
 ```
 
+The data can be viewed online at https://indianopenmaps.fly.dev/google-buildings/view
+
 Steps to reproduce what was done to get data in the current format are documented in `steps.sh`
 
 Sample working deployment is in the `infra` folder. But the current deployment is at [indianopenmaps](https://github.com/ramSeraph/indianopenmaps)
