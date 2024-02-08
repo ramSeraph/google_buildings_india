@@ -76,11 +76,18 @@ class MBTilesSource:
     def get_metadata(self):
         all_metadata = {}
         for row in self.con.execute("SELECT name,value FROM metadata"):
-            all_metadata[row[0]] = row[1]
+            k = row[0]
+            v = row[1]
+            if k == 'json':
+                json_data = json.loads(v)
+                for k, v in json_data.items():
+                    all_metadata[k] = v
+                continue
+            all_metadata[k] = v
 
         metadata = {}
         for k in ['type', 'format', 'attribution', 'description', 'name', 'version', 'vector_layers']:
-            if k not in metadata:
+            if k not in all_metadata:
                 continue
             metadata[k] = all_metadata[k]
 
